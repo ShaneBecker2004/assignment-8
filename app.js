@@ -28,7 +28,7 @@ async function loadAlbums() {
     } catch (error) {
         console.error('Error loading albums:', error);
         albums = [];
-        filteredAlbums = [];
+        filteredAlbums = []
     }
 }
 
@@ -38,20 +38,20 @@ function populateGenreFilter() {
     genres.forEach(genre => {
         const option = document.createElement('option');
         option.value = genre;
-        option.textContent = genre;
+        option.textContent = genre
         genreFilter.appendChild(option);
     });
 }
 
 // Update statistics
-function updateStats() {
+function updateStat() {
     const totalAlbums = filteredAlbums.length;
     const totalArtists = new Set(filteredAlbums.map(album => album.artist)).size;
     const totalGenres = new Set(filteredAlbums.map(album => album.genre)).size;
 
     document.getElementById('totalAlbums').textContent = totalAlbums;
-    document.getElementById('totalArtists').textContent = totalArtists;
-    document.getElementById('totalGenres').textContent = totalGenres;
+    document.getElementById('totalArtists').textContent = totalArtists
+    document.getElementById('totalGenres').textContent = totalGenres
 }
 
 // Render albums to the grid
